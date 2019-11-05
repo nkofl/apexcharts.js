@@ -3706,7 +3706,15 @@
       this.masker.targets.push(this)
 
       // apply mask
-      return this.attr('mask', 'url("#' + this.masker.attr('id') + '")')
+      var base = ''
+      var baseUrl
+      if (document && document.querySelector
+        && window && window.location && window.location.href
+        && (baseUrl = (document.querySelector('base') || {}).href)
+        && baseUrl !== window.location.href.split('?')[0]) {
+        base = window.location.pathname
+      }
+      return this.attr('mask', 'url(' + base + '"#' + this.masker.attr('id') + '")')
     },
     // Unmask element
     unmask: function () {
@@ -3765,7 +3773,15 @@
       this.clipper.targets.push(this)
 
       // apply mask
-      return this.attr('clip-path', 'url("#' + this.clipper.attr('id') + '")')
+      var base = ''
+      var baseUrl
+      if (document && document.querySelector
+        && window && window.location && window.location.href
+        && (baseUrl = (document.querySelector('base') || {}).href)
+        && baseUrl !== window.location.href.split('?')[0]) {
+        base = window.location.pathname
+      }
+      return this.attr('clip-path', 'url(' + base + '"#' + this.clipper.attr('id') + '")')
     },
     // Unclip element
     unclip: function () {
@@ -3804,7 +3820,15 @@
       },
       // Return the fill id
       fill: function () {
-        return 'url(#' + this.id() + ')'
+        var base = ''
+        var baseUrl
+        if (document && document.querySelector
+          && window && window.location && window.location.href
+          && (baseUrl = (document.querySelector('base') || {}).href)
+          && baseUrl !== window.location.href.split('?')[0]) {
+          base = window.location.pathname
+        }
+        return 'url(' + base + '#' + this.id() + ')'
       },
       // Alias string convertion to fill
       toString: function () {
@@ -3892,7 +3916,15 @@
     extend: {
     // Return the fill id
       fill: function () {
-        return 'url(#' + this.id() + ')'
+        var base = ''
+        var baseUrl
+        if (document && document.querySelector
+          && window && window.location && window.location.href
+          && (baseUrl = (document.querySelector('base') || {}).href)
+          && baseUrl !== window.location.href.split('?')[0]) {
+          base = window.location.pathname
+        }
+        return 'url(' + base + '#' + this.id() + ')'
       },
       // Update pattern by rebuilding
       update: function (block) {
@@ -4799,7 +4831,15 @@
       },
       // Return the fill id
       toString: function () {
-        return 'url(#' + this.id() + ')'
+        var base = ''
+        var baseUrl
+        if (document && document.querySelector
+          && window && window.location && window.location.href
+          && (baseUrl = (document.querySelector('base') || {}).href)
+          && baseUrl !== window.location.href.split('?')[0]) {
+          base = window.location.pathname
+        }
+        return 'url(' + base + '#' + this.id() + ')'
       }
     },
 

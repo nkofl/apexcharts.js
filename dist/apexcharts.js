@@ -23999,7 +23999,7 @@
         var baseUrl;
 
         if (document && document.querySelector && window && window.location && window.location.href && (baseUrl = (document.querySelector('base') || {}).href) && baseUrl !== window.location.href.split('?')[0]) {
-          base = window.location.pathname;
+          base = window.location.pathname + window.location.search;
         }
 
         return this.attr('mask', 'url(' + base + '"#' + this.masker.attr('id') + '")');
@@ -24057,7 +24057,7 @@
         var baseUrl;
 
         if (document && document.querySelector && window && window.location && window.location.href && (baseUrl = (document.querySelector('base') || {}).href) && baseUrl !== window.location.href.split('?')[0]) {
-          base = window.location.pathname;
+          base = window.location.pathname + window.location.search;
         }
 
         return this.attr('clip-path', 'url(' + base + '"#' + this.clipper.attr('id') + '")');
@@ -24100,7 +24100,7 @@
           var baseUrl;
 
           if (document && document.querySelector && window && window.location && window.location.href && (baseUrl = (document.querySelector('base') || {}).href) && baseUrl !== window.location.href.split('?')[0]) {
-            base = window.location.pathname;
+            base = window.location.pathname + window.location.search;
           }
 
           return 'url(' + base + '#' + this.id() + ')';
@@ -24191,7 +24191,7 @@
           var baseUrl;
 
           if (document && document.querySelector && window && window.location && window.location.href && (baseUrl = (document.querySelector('base') || {}).href) && baseUrl !== window.location.href.split('?')[0]) {
-            base = window.location.pathname;
+            base = window.location.pathname + window.location.search;
           }
 
           return 'url(' + base + '#' + this.id() + ')';
@@ -25038,7 +25038,7 @@
           var baseUrl;
 
           if (document && document.querySelector && window && window.location && window.location.href && (baseUrl = (document.querySelector('base') || {}).href) && baseUrl !== window.location.href.split('?')[0]) {
-            base = window.location.pathname;
+            base = window.location.pathname + window.location.search;
           }
 
           return 'url(' + base + '#' + this.id() + ')';
